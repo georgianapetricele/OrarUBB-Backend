@@ -15,11 +15,11 @@ public class ClassTypeService {
     }
 
     public Optional<ClassType> getClassTypeByName(String classType) {
-        return classTypeRepository.findByClassType(classType);
+        return classTypeRepository.findByName(classType);
     }
 
     public boolean classTypeExists(String classType) {
-        return classTypeRepository.existsByClassType(classType);
+        return classTypeRepository.existsByName(classType);
     }
 
     public ClassType saveClassType(ClassType classType) {

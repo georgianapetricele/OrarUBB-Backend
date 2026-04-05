@@ -1,7 +1,6 @@
 package com.example.orarubb.backend.domain;
 
 import java.io.Serializable;
-import java.util.UUID;
 
 import lombok.EqualsAndHashCode;
 

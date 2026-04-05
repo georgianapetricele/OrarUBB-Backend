@@ -11,11 +11,9 @@ import java.util.List;
 @Service
 public class FormationService {
     private final FormationRepository formationRepository;
-    private final AcademicSpecializationService academicSpecializationService;
 
-    public FormationService(FormationRepository formationRepository, AcademicSpecializationService academicSpecializationService) {
+    public FormationService(FormationRepository formationRepository) {
         this.formationRepository = formationRepository;
-        this.academicSpecializationService = academicSpecializationService;
     }
 
     public List<Formation> getAllFormationsForAcademicSpecialization(int academicSpecializationId) {
@@ -33,15 +31,15 @@ public class FormationService {
         return new GroupResponse(formationRepository.getAllGroupsWithYearCode(year_code));
     }
 
-    public Boolean isYearCode(String code) {
+    public boolean isYearCode(String code) {
         return this.formationRepository.getYearCode(code).size() == 1;
     }
 
-    public Boolean isGroupCode(String code) {
+    public boolean isGroupCode(String code) {
         return this.formationRepository.getGroupCode(code).size() == 1;
     }
 
-    public Boolean isSubgroupCode(String code) {
+    public boolean isSubgroupCode(String code) {
         return this.formationRepository.getSubgroupCode(code).size() == 1;
     }
 

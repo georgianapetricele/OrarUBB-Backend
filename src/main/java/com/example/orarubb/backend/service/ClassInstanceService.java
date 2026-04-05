@@ -8,7 +8,6 @@ import java.util.UUID;
 import com.example.orarubb.backend.dto.ClassInstanceResponse;
 import com.example.orarubb.backend.repository.ClassInstanceRepository;
 import com.example.orarubb.backend.repository.DayDefinitionLocaleRepository;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
 import org.springframework.stereotype.Service;
 
 import com.example.orarubb.backend.domain.ClassInstance;
@@ -21,15 +20,13 @@ import lombok.extern.slf4j.Slf4j;
 public class ClassInstanceService {
     private final ClassInstanceRepository classInstanceRepository;
     private final DayDefinitionLocaleRepository dayDefinitionLocaleRepository;
-    private final DataSourceTransactionManagerAutoConfiguration dataSourceTransactionManagerAutoConfiguration;
     private final TeacherService teacherService;
     private final FormationService formationService;
 
     public ClassInstanceService(ClassInstanceRepository classInstanceRepository,
-                                DayDefinitionLocaleRepository dayDefinitionLocaleRepository, DataSourceTransactionManagerAutoConfiguration dataSourceTransactionManagerAutoConfiguration, TeacherService teacherService, FormationService formationService) {
+                                DayDefinitionLocaleRepository dayDefinitionLocaleRepository, TeacherService teacherService, FormationService formationService) {
         this.classInstanceRepository = classInstanceRepository;
         this.dayDefinitionLocaleRepository = dayDefinitionLocaleRepository;
-        this.dataSourceTransactionManagerAutoConfiguration = dataSourceTransactionManagerAutoConfiguration;
         this.teacherService = teacherService;
         this.formationService = formationService;
     }
@@ -55,7 +52,6 @@ public class ClassInstanceService {
                 queryResults.addAll(classInstanceRepository.findClassInstancesByGroupAndLanguageTag(group, language));
                 results.addAll(this.mapObjectsToClassInstanceResponse(queryResults));
             }
-            //results.addAll(this.mapObjectsToClassInstanceResponse(queryResults));
         }
         else if (formationService.isSubgroupCode(groupCode)) {
             String group = formationService.getGroupForSubgroup(groupCode);

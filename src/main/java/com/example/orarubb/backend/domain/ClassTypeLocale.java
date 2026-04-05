@@ -1,6 +1,5 @@
 package com.example.orarubb.backend.domain;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,8 +22,8 @@ public class ClassTypeLocale {
     @Column(name = "language_tag")
     private String languageTag;
 
-    @Column(name = "class_type_locale", insertable = false, updatable = false)
-    private String classTypeLocale; 
+    @Column(name = "name", insertable = false, updatable = false)
+    private String name;
 
     @ManyToOne()
     @JoinColumn(
@@ -32,6 +31,4 @@ public class ClassTypeLocale {
             referencedColumnName = "class_type_id"
     )
     private ClassType classType;
-
-
 }

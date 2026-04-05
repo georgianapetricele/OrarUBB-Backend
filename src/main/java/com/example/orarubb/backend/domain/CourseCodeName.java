@@ -1,5 +1,4 @@
 package com.example.orarubb.backend.domain;
-import java.util.UUID;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

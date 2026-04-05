@@ -10,8 +10,8 @@ import java.util.Optional;
 public interface ClassTypeRepository extends JpaRepository<ClassType, Integer> {
 
     // Custom query to find a ClassType by its classType name
-    Optional<ClassType> findByClassType(String classType);
+    Optional<ClassType> findByName(String name);
 
     // Optional: Custom query to check if a ClassType exists by its classType name
-    boolean existsByClassType(String classType);
+    boolean existsByName(String name);
 }

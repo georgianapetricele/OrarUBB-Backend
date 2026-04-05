@@ -1,7 +1,5 @@
 package com.example.orarubb.backend.domain;
 
-import java.util.UUID;
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,6 +16,6 @@ public class ClassType {
     @Column(name = "class_type_id")
     private int classTypeId;
 
-    @Column(name = "class_type", nullable = false)
-    private String classType; 
+    @Column(name = "name", nullable = false)
+    private String name;
 }

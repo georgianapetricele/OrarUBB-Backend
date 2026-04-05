@@ -67,7 +67,9 @@ public class ClassInstanceController {
             switch (roomName)
             {
                 case "2-I", "5-I", "6-II", "7-I", "9-I" -> roomName = roomName.replace("-", "/");
-                default -> {}
+                default -> {
+                    // Intentionally no-op: only these specific rooms use '/' in the underlying naming.
+                }
             }
         }
 

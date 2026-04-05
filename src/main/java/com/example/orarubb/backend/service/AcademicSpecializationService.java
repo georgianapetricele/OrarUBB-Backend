@@ -48,7 +48,7 @@ public class AcademicSpecializationService {
     public List<AcademicSpecializationResponse> getAllAcademicSpecializations() {
         return academicSpecializationRepository.findAll().stream()
                 .map(this::convertToResponse)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public AcademicSpecializationResponse getAcademicSpecializationById(Integer academicSpecializationId) {
