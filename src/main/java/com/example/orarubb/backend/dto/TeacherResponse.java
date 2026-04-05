@@ -1,0 +1,17 @@
+package com.example.orarubb.backend.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+
+import java.util.UUID;
+
+@Data
+@AllArgsConstructor
+public class TeacherResponse {
+    private UUID teacherId;
+    @Getter
+    private String name;
+    private String codeName;
+
+}

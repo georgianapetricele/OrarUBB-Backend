@@ -1,0 +1,14 @@
+package com.example.orarubb.backend.repository;
+
+import com.example.orarubb.backend.domain.DayDefinition;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface DayDefinitionRepository extends JpaRepository<DayDefinition, Integer> {
+
+    // Custom query method to find a DayDefinition by dayName
+    Optional<DayDefinition> findByDayName(String dayName);
+}
